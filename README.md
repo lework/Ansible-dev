@@ -1,40 +1,40 @@
-## �ٷ������ĵ�
+## 官方开发文档
 ----
 http://docs.ansible.com/ansible/dev_guide/index.html
 
-> �ǳ��Ƽ���ҿ�**�ٷ��ĵ�**
+> 非常推荐大家看**官方文档**
 
-## ����
+## 环境
 ----
-�������õĻ���
+本次所用的环境
 - ansible `2.3.0.0`
 - os `Centos 6.7 X64`
 - python `2.6.6`
 
-## ����
+## 介绍
 ----
-Ansible ������Ϊ����ģ�飬һ��`modules`������`plugins`��
+Ansible 开发分为两大模块，一是`modules`，而是`plugins`。
 
-���ȣ�Ҫ��ס���������������ĸ��ط�ִ�У�
-- `modules` �ļ������͵�**Զ������**��ִ�С�
-- `plugins` ����**ansible������**��ִ�еġ�
+首先，要记住这两部分内容在哪个地方执行？
+- `modules` 文件被传送到**远端主机**并执行。
+- `plugins` 是在**ansible服务器**上执行的。
 
-������ִ��˳��
-`plugins` ���� `modules` ִ�С�
+再者是执行顺序？
+`plugins` 先于 `modules` 执行。
 
-Ȼ������ȷ�������������Ǹ�ɶ�õģ�
-- `modules` ��ansible�ĺ������ݣ���ʹplaybook��ø��Ӽ����ˣ�һ��task�������ĳһ��ܡ�ansibleģ���Ǳ����͵�Զ�����������еġ��������ǿ�����Զ����������ִ�е��κ����Ա�дmodules��
-- `plugins` ����**ansible����**��ִ�еģ���������modules��һЩ��������������Զ�������������ļ���Զ������֮��ġ�
+然后大家明确这两部分内容是干啥用的？
+- `modules` 是ansible的核心内容，它使playbook变得更加简单明了，一个task就是完成某一项功能。ansible模块是被传送到远程主机上运行的。所以它们可以用远程主机可以执行的任何语言编写modules。
+- `plugins` 是在**ansible主机**上执行的，用来辅助modules做一些操作。比如连接远程主机，拷贝文件到远程主机之类的。
 
 
-## ansibleִ��pingģ��Ĺ��̡�
+## ansible执行ping模块的过程。
 ----
-![ansible���й���.jpg](http://upload-images.jianshu.io/upload_images/3629406-cdde75580732a013.jpg)
+![ansible运行过程.jpg](https://raw.githubusercontent.com/kuailemy123/Ansible-dev/master/ansible运行过程.jpg)
 
-�����ҪԴ�ļ��������QQȺ[425931784](http://shang.qq.com/wpa/qunwpa?idkey=47638ae0b21fc2b1e714939524706b1fc405bc04cbd9426a8bcc9ed3d0c83954)����Ⱥ�ļ����ء�
+如果想要源文件，请加入QQ群[425931784](http://shang.qq.com/wpa/qunwpa?idkey=47638ae0b21fc2b1e714939524706b1fc405bc04cbd9426a8bcc9ed3d0c83954)，至群文件下载。
 
 
-## ʹ��˵��
+## 使用说明
 ---
 
 http://www.jianshu.com/p/667dabe96f04
