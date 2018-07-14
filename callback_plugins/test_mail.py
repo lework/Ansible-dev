@@ -30,7 +30,7 @@ from_addr = 'from@test.com'
 
 msg = MIMEText(body, 'plain', 'utf-8')
 msg['From'] = _format_addr(u'%s <%s>' % sender,from_addr)
-msg['To'] = _format_addr(u'¹ÜÀíÔ± <%s>' % to)
+msg['To'] = _format_addr(u'ç®¡ç†å‘˜ <%s>' % to)
 msg['Subject'] = Header(subject, 'utf-8').encode()
 
 smtp = smtplib.SMTP('smtp.test.com', 25) 
