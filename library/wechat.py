@@ -129,6 +129,7 @@ class WeChat(object):
     def __init__(self, module, corpid, secret, agentid):
         """
         初始化
+        :param module:  Ansible module
         :param corpid:  企业ID
         :param secret:  密钥
         :param agentid: 应用id
@@ -165,10 +166,10 @@ class WeChat(object):
     def messages(self, msg, touser, toparty, totag):
         """
         构建发送数据格式
-        :param msg:
-        :param touser:
-        :param toparty:
-        :param totag:
+        :param msg: 消息内容
+        :param touser: 指定用户id
+        :param toparty: 指定部门id
+        :param totag: 指定标签id
         :return:
         """
         values = {
