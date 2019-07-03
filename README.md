@@ -26,6 +26,20 @@ Ansible 开发分为两大模块，一是`modules`，而是`plugins`。
 - `modules` 是ansible的核心内容，它使playbook变得更加简单明了，一个task就是完成某一项功能。ansible模块是被传送到远程主机上运行的。所以它们可以用远程主机可以执行的任何语言编写modules。
 - `plugins` 是在**ansible主机**上执行的，用来辅助modules做一些操作。比如连接远程主机，拷贝文件到远程主机之类的。
 
+plugins存放位置
+
+- `ANSIBLE_plugin_type_PLUGINS` 环境变量值指定的目录，其中`plugin_type`是指插件类型，如`ANSIBLE_INVENTORY_PLUGINS`
+- `~/.ansible/plugins/`目录下的
+- 当前剧本目录下的`callback_plugins`
+- role目录下的`callback_plugins`
+
+modules存放位置
+
+- `ANSIBLE_LIBRARY`环境变量值指定的目录
+- `~/.ansible/plugins/modules/` 当前用户目录下
+- `/usr/share/ansible/plugins/modules/` 系统自定义目录下
+- 当前剧本目录下的`library`
+- role目录下的`library`
 
 ## ansible执行ping模块的过程。
 ----
